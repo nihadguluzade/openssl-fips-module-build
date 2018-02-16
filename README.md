@@ -17,8 +17,11 @@ OpenSSL with FIPS Module Build
 4. Go to into extracted directory, then execute following command in your command prompt
 
 > cd ..\openssl-fips-2.0.16\
+
 ..\openssl-fips-2.0.16> Set PROCESSOR_ARCHITECTURE=x86
+
 ..\openssl-fips-2.0.16> ms\do_fips
+
 
 Follow screen instructions and done.
 
@@ -41,8 +44,11 @@ You have successfully generated a build of FLIPS for OpenSSL.
 4. Execute following commands:
 
 > cd ..\openssl-1.0.2k
+
 > perl Configure VC-WIN32 fips --with-fipsdir=C:\usr\local\ssl\fips-2.0
+
 > ms\do_nasm
+
 > nmake -f ms\ntdll.mak
 
 Can open 'out32dll' directory to verify and see all required dll files
@@ -53,12 +59,15 @@ Can open 'out32dll' directory to verify and see all required dll files
 #### HOW TO CHECK OPENSSL VERSION IN COMPILED BUILD:
 
 > cd out32dll
+
 > openssl version
 
 #### HOW TO TEST OPENSSL BUILD:
 
 > cd out32dll
+
 > notepad test.txt   (write something inside and save like: test)
+
 > openssl md5 test.txt  (without OPENSSL_FIPS) flag
 
 You will get a hash value in return
@@ -66,6 +75,7 @@ You will get a hash value in return
 Now add flag for OPENSSL_FIPS to verify
 
 > set OPENSSL_FIPS=1
+
 > openssl md5 test.txt  (without OPENSSL_FIPS) flag
 
 In return you will get error as openssl fips wont allow you to use md5 as FIPs wont allow you md5
