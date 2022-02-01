@@ -49,6 +49,8 @@ You have successfully generated a build of FLIPS for OpenSSL.
 
 > ms\do_nasm
 
+> nmake -f ms\ntdll.mak clean
+
 > nmake -f ms\ntdll.mak
 
 Can open 'out32dll' directory to verify and see all required dll files
@@ -79,3 +81,8 @@ Now add flag for OPENSSL_FIPS to verify
 > openssl md5 test.txt  (without OPENSSL_FIPS) flag
 
 In return you will get error as openssl fips wont allow you to use md5 as FIPs wont allow you md5
+
+
+#### References
+
+https://wiki.openssl.org/index.php/Compilation_and_Installation
